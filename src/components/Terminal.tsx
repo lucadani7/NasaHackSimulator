@@ -211,7 +211,9 @@ export default function Terminal() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => {
                     if (e.key === "Enter") {
-                        void handleCommand(input.trim());
+                        const command = input.trim();
+                        setInput("");
+                        void handleCommand(command);
                         playSound("/sound/type-writing-6834.mp3");
                     }
                 }}
